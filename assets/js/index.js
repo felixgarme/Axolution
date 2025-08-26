@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Cargar la navbar dinámicamente
-    fetch("/views/components/navbar.html")
+    fetch("./views/components/navbar.html")
         .then(res => res.text())
         .then(data => {
             const navbarContainer = document.getElementById("navbar-component");
