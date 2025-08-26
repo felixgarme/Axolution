@@ -1,6 +1,3 @@
-/* ==========================
-   Variables globales
-   ========================== */
 :root {
     --primary-blue: #0047AB;
     --accent-orange: #FF6F20;
@@ -8,18 +5,12 @@
     --white: #FFFFFF;
 }
 
-/* ==========================
-   Reset / Box sizing
-   ========================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ==========================
-   Estilos base (body, contenedor genérico)
-   ========================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -28,17 +19,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Contenedor reutilizable (máxima anchura y centrado) */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* ==========================
-   Navegación (header / nav)
-   ========================== */
-/* Barra de navegación fija, fondo semitransparente con blur */
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -50,7 +31,6 @@ nav {
     padding: 1rem 0;
 }
 
-/* Contenedor interno de la navegación (alineación y espaciado) */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -60,7 +40,6 @@ nav {
     padding: 0 2rem;
 }
 
-/* Logo: tamaño, color y espaciado */
 .logo {
     font-size: 2rem;
     font-weight: 300;
@@ -68,7 +47,6 @@ nav {
     letter-spacing: 2px;
 }
 
-/* Ajustes de la imagen dentro del logo */
 .logo img {
     vertical-align: middle;
     margin-right: 10px;
@@ -76,7 +54,6 @@ nav {
     top: -5px; /* Sube 5px */
 }
 
-/* Enlaces de navegación: lista horizontal */
 .nav-links {
     display: flex;
     list-style: none;
@@ -94,7 +71,6 @@ nav {
     color: var(--accent-orange);
 }
 
-/* Botón de menú para móvil (por defecto oculto en desktop) */
 .mobile-menu {
     display: none;
     background: none;
@@ -104,10 +80,7 @@ nav {
     cursor: pointer;
 }
 
-/* ==========================
-   Sección Hero / Encabezado principal
-   ========================== */
-/* Área hero de pantalla completa con gradiente */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -118,7 +91,6 @@ nav {
     overflow: hidden;
 }
 
-/* Fondo SVG en pseudo-elemento con animación de "grid" */
 .hero::before {
     content: '';
     position: absolute;
@@ -129,13 +101,11 @@ nav {
     animation: gridMove 20s linear infinite;
 }
 
-/* Animación que mueve el patrón de rejilla */
 @keyframes gridMove {
     0% { transform: translate(-50%, -50%); }
     100% { transform: translate(-40%, -40%); }
 }
 
-/* Contenido dentro del hero (centrado y con límite de ancho) */
 .hero-content {
     text-align: center;
     z-index: 2;
@@ -144,7 +114,6 @@ nav {
     padding: 0 2rem;
 }
 
-/* Título principal con efecto gradiente y brillo animado */
 .hero h1 {
     font-size: 4rem;
     font-weight: 100;
@@ -156,13 +125,11 @@ nav {
     animation: glow 2s ease-in-out infinite alternate;
 }
 
-/* Animación de resplandor del texto */
 @keyframes glow {
     0% { text-shadow: 0 0 20px rgba(255, 111, 32, 0.3); }
     100% { text-shadow: 0 0 30px rgba(255, 111, 32, 0.6); }
 }
 
-/* Subtítulo dentro del hero */
 .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 300;
@@ -170,7 +137,6 @@ nav {
     opacity: 0.9;
 }
 
-/* Botón principal (CTA) con gradiente, radio y sombra */
 .cta-button {
     display: inline-block;
     background: linear-gradient(135deg, var(--accent-orange), #ff6600);
@@ -187,13 +153,13 @@ nav {
     box-shadow: 0 8px 20px rgba(255, 111, 32, 0.4);
 }
 
-/* efecto especial en "recorrido" (clase adicional para CTA) */
+/* efecto especial en "recorrido" */
 .recorrido {
     background: linear-gradient(135deg, #0014ff, #4a6fff) !important;
     box-shadow: 0 8px 25px rgba(80, 83, 255, 0.4);
 }
 
-/* Efecto animado al pasar el mouse — pseudo-elemento radial */
+/* Efecto animado al pasar el mouse */
 .cta-button::before {
     content: "";
     position: absolute;
@@ -208,27 +174,24 @@ nav {
     z-index: 1;
 }
 
-/* Expansión del pseudo-elemento radial al hover */
 .cta-button:hover::before {
     transform: scale(1);
 }
 
-/* Hover del botón: elevación y escala */
+/* hover del botón */
 .cta-button:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 15px 35px rgba(255, 111, 32, 0.6);
 }
 
-/* Asegurar que el texto esté encima del pseudo-elemento */
+/* asegurar que el texto quede encima */
 .cta-button span {
     position: relative;
     z-index: 2;
 }
 
-/* ==========================
-   Elementos flotantes 3D (decorativos)
-   ========================== */
-/* Caja flotante con gradiente y animación */
+
+/* 3D Floating Elements */
 .floating-element {
     position: absolute;
     width: 100px;
@@ -239,7 +202,6 @@ nav {
     opacity: 0.7;
 }
 
-/* Posicionamientos específicos para los hijos flotantes */
 .floating-element:nth-child(1) {
     top: 20%;
     left: 10%;
@@ -258,22 +220,24 @@ nav {
     animation-delay: -2s;
 }
 
-/* Animación de flotación y rotación */
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(180deg); }
 }
 
-/* ==========================
-   Sección Services (Servicios)
-   ========================== */
+/* Services Section */
 .services {
     padding: 6rem 0;
     background: var(--white);
     color: var(--dark-gray);
 }
 
-/* Título de sección */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 .section-title {
     text-align: center;
     font-size: 3rem;
@@ -282,7 +246,6 @@ nav {
     color: var(--primary-blue);
 }
 
-/* Grid de tarjetas de servicio */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -290,7 +253,6 @@ nav {
     margin-top: 3rem;
 }
 
-/* Tarjeta de servicio: fondo, padding y sombra */
 .service-card {
     background: var(--white);
     padding: 3rem 2rem;
@@ -301,14 +263,12 @@ nav {
     border: 2px solid transparent;
 }
 
-/* Hover en tarjeta: elevar y cambiar borde/sombra */
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 60px rgba(0, 71, 171, 0.2);
     border-color: var(--accent-orange);
 }
 
-/* Icono dentro de la tarjeta de servicio */
 .service-icon {
     font-size: 3rem;
     color: var(--primary-blue);
@@ -316,13 +276,11 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Icono cambia de color y escala al hover de la tarjeta */
 .service-card:hover .service-icon {
     color: var(--accent-orange);
     transform: scale(1.1);
 }
 
-/* Título y descripción del servicio */
 .service-title {
     font-size: 1.5rem;
     font-weight: 500;
@@ -335,9 +293,7 @@ nav {
     opacity: 0.8;
 }
 
-/* ==========================
-   Sección Gallery (Galería)
-   ========================== */
+/* Gallery Section */
 .gallery {
     padding: 6rem 0;
     background: linear-gradient(135deg, var(--dark-gray) 0%, var(--primary-blue) 100%);
@@ -350,7 +306,6 @@ nav {
     margin-top: 3rem;
 }
 
-/* Elemento de galería: fondo gradiente, altura y transición */
 .gallery-item {
     height: 250px;
     background: linear-gradient(45deg, var(--primary-blue), var(--accent-orange));
@@ -365,7 +320,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* Pseudo-elemento que muestra CTA sobre la imagen */
 .gallery-item::after {
     content: 'Ver Proyecto';
     position: absolute;
@@ -384,9 +338,7 @@ nav {
     opacity: 1;
 }
 
-/* ==========================
-   Sección Shop (Tienda / Productos)
-   ========================== */
+/* Shop Section */
 .shop {
     padding: 6rem 0;
     background: var(--white);
@@ -400,7 +352,6 @@ nav {
     margin-top: 3rem;
 }
 
-/* Tarjeta de producto */
 .product-card {
     background: var(--white);
     border-radius: 15px;
@@ -414,13 +365,11 @@ nav {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen de producto (fondo decorativo) */
 .product-image {
     height: 200px;
     background: linear-gradient(45deg, var(--primary-blue), var(--accent-orange));
 }
 
-/* Información del producto (texto y padding) */
 .product-info {
     padding: 1.5rem;
 }
@@ -437,9 +386,7 @@ nav {
     font-size: 1.2rem;
 }
 
-/* ==========================
-   Footer
-   ========================== */
+/* Footer */
 footer {
     background: var(--dark-gray);
     padding: 4rem 0 2rem;
@@ -453,14 +400,12 @@ footer {
     margin-bottom: 2rem;
 }
 
-/* Encabezados dentro del footer */
 .footer-section h3 {
     color: var(--primary-blue);
     margin-bottom: 1rem;
     font-weight: 300;
 }
 
-/* Texto y enlaces en el footer */
 .footer-section p, .footer-section a {
     color: var(--white);
     text-decoration: none;
@@ -473,7 +418,6 @@ footer {
     color: var(--accent-orange);
 }
 
-/* Iconos sociales: circulares y centrados */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -498,15 +442,11 @@ footer {
     background: var(--accent-orange);
     transform: translateY(-3px);
 }
-
-/* Icono de imprimir (font-awesome pseudo-elemento) */
 .fa-print:before {
     content: "\f06b";
 }
 
-/* ==========================
-   Responsive / Mobile
-   ========================== */
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
