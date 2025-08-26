@@ -190,7 +190,7 @@ nav {
 
 /* efecto especial en "recorrido" (clase adicional para CTA) */
 .recorrido {
-    background: linear-gradient(135deg, #0014ff, #4a6fff) !important;
+    background: linear-gradient(135deg, #ff3300, #4a6fff) !important;
     box-shadow: 0 8px 25px rgba(80, 83, 255, 0.4);
 }
 
