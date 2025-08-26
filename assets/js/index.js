@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. Cargar la navbar
+    // 1. Cargar la navbar dinámicamente
     fetch("/views/components/navbar.html")
         .then(res => res.text())
         .then(data => {
-            document.getElementById("navbar-component").innerHTML = data;
+            const navbarContainer = document.getElementById("navbar-component");
+            if (!navbarContainer) {
+                console.warn("⚠️ No se encontró #navbar-component en index.html");
+                return;
+            }
+
+            navbarContainer.innerHTML = data;
 
             // --- Ahora sí, los elementos existen ---
             const navbar = document.getElementById('navbar');
@@ -38,12 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
             } else {
-                console.warn("⚠️ No se encontró navbar o mobile-menu");
+                console.warn("⚠️ No se encontró navbar o mobile-menu dentro de navbar.html");
             }
         })
         .catch(err => console.error("Error cargando navbar:", err));
 
-    // 2. Smooth scrolling (estos anchors ya existen en index.html)
+    // 2. Smooth scrolling para anchors internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const target = document.querySelector(this.getAttribute('href'));
