@@ -6,16 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             document.getElementById("navbar-component").innerHTML = data;
 
-            // --- Ahora que la navbar ya existe, inicializamos ---
+            // --- Ahora que la navbar ya existe en el DOM ---
             initNavbar();
-        });
+        })
+        .catch(err => console.error("Error cargando navbar:", err));
 
-    // 2. Smooth scrolling (esto no depende de navbar)
+    // 2. Smooth scrolling para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(card);
     });
 
-    // 4. Parallax effect
+    // 4. Parallax effect en elementos flotantes
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.floating-element');
@@ -59,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
 // --- Función para inicializar navbar y menú móvil ---
 function initNavbar() {
     const navbar = document.getElementById('navbar');
@@ -66,11 +68,11 @@ function initNavbar() {
     const navLinks = document.querySelector('.nav-links');
 
     if (!navbar || !mobileMenu || !navLinks) {
-        console.warn("Navbar elements not found");
+        console.warn("⚠️ Navbar elements not found. Revisa navbar.html");
         return;
     }
 
-    // Navbar background on scroll
+    // Fondo dinámico de la navbar al hacer scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(28, 28, 28, 0.95)';
@@ -79,10 +81,12 @@ function initNavbar() {
         }
     });
 
-    // Mobile menu toggle
+    // Toggle del menú móvil
     mobileMenu.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        if (navLinks.style.display === 'flex') {
+        const isOpen = navLinks.style.display === 'flex';
+        navLinks.style.display = isOpen ? 'none' : 'flex';
+
+        if (!isOpen) {
             navLinks.style.flexDirection = 'column';
             navLinks.style.position = 'absolute';
             navLinks.style.top = '100%';
