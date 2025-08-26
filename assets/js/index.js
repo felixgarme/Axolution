@@ -47,21 +47,30 @@ document.querySelectorAll('.service-card').forEach(card => {
 });
 
 // Mobile menu toggle
-const mobileMenu = document.querySelector('.mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("/views/components/navbar.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar-component").innerHTML = data;
 
-mobileMenu.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    if (navLinks.style.display === 'flex') {
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = 'rgba(28, 28, 28, 0.95)';
-        navLinks.style.padding = '1rem 0';
-        navLinks.style.backdropFilter = 'blur(10px)';
-    }
+            // 🔥 Inicializar aquí el menú móvil
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = 'rgba(28, 28, 28, 0.95)';
+                    navLinks.style.padding = '1rem 0';
+                    navLinks.style.backdropFilter = 'blur(10px)';
+                }
+            });
+        });
 });
 
 // Add parallax effect to floating elements
