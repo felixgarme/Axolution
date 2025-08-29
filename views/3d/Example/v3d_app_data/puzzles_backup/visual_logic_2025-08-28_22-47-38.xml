@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="Init" type="InitTab" active="false" scrollx="408.6666259765625" scrolly="19.5555419921875" scale="0.9"></tab>
-  <tab name="General" type="CommonTab" active="true" scrollx="-18.390380859374773" scrolly="-204.2152842768914" scale="0.9999999999999997">
+  <tab name="General" type="CommonTab" active="true" scrollx="-18.4425714989502" scrolly="-204.19817035661669" scale="0.9999999999999997">
     <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="a)@@{k[@hB0E8ip~|GqT" x="-153" y="155">
       <statement name="DO">
         <block type="execScript" id="eJ#qA6Bd?AIr^|h0*jB7">
@@ -23,7 +23,7 @@
                   <field name="ON_OFF">ON</field>
                   <value name="SPEED">
                     <shadow type="math_number" id=")6OC1ZK1o{6({M/?vwq%">
-                      <field name="NUM">1</field>
+                      <field name="NUM">0.8</field>
                     </shadow>
                   </value>
                 </block>

@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="Init" type="InitTab" active="false" scrollx="408.6666259765625" scrolly="19.5555419921875" scale="0.9"></tab>
-  <tab name="General" type="CommonTab" active="true" scrollx="-18.390380859374773" scrolly="-204.2152842768914" scale="0.9999999999999997">
+  <tab name="General" type="CommonTab" active="true" scrollx="569.8359025005177" scrolly="-122.45204982847463" scale="0.8780013850009107">
     <block xmlns="https://developers.google.com/blockly/xml" type="connectorSlot" id="a)@@{k[@hB0E8ip~|GqT" x="-153" y="155">
       <statement name="DO">
         <block type="execScript" id="eJ#qA6Bd?AIr^|h0*jB7">
@@ -11,23 +11,13 @@
             </shadow>
           </value>
           <next>
-            <block type="execScript" id="/h%T4*R2`D)rPB8u_h$z">
-              <value name="TEXT">
-                <shadow type="textMultiline" id="DXD-I-)~Dg~O6|p9VLkS">
-                  <field name="HIGHLIGHT_MODE">javascript</field>
-                  <field name="TEXT" editor-height="3" editor-width="588.888916015625">app.controls.enablePan = false;&amp;#10;</field>
+            <block type="autoRotateCamera" id="hLhVB)B677V:mL|#A2[W">
+              <field name="ON_OFF">ON</field>
+              <value name="SPEED">
+                <shadow type="math_number" id=")6OC1ZK1o{6({M/?vwq%">
+                  <field name="NUM">0.8</field>
                 </shadow>
               </value>
-              <next>
-                <block type="autoRotateCamera" id="hLhVB)B677V:mL|#A2[W">
-                  <field name="ON_OFF">ON</field>
-                  <value name="SPEED">
-                    <shadow type="math_number" id=")6OC1ZK1o{6({M/?vwq%">
-                      <field name="NUM">1</field>
-                    </shadow>
-                  </value>
-                </block>
-              </next>
             </block>
           </next>
         </block>
