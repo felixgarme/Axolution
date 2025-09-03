@@ -4,7 +4,7 @@
   align-items: center;         /* centra verticalmente texto e imagen */
   gap: 10px;                   /* reemplaza margin-right en la img */
   perspective: 600px;          /* profundidad 3D */
-  font-size: 2rem;
+  font-size: 200rem;
   font-weight: 300;
   color: var(--primary-blue);
   letter-spacing: 2px;
