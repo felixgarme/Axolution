@@ -74,3 +74,5 @@ window.addEventListener('scroll', () => {
         element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
     });
 });
+
+

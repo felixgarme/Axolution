@@ -1,0 +1,38 @@
+/* Contenedor del logo: tamaño, color y alineación */
+.logo {
+  display: inline-flex;        /* mejor que inline-block si hay imagen + texto */
+  align-items: center;         /* centra verticalmente texto e imagen */
+  gap: 10px;                   /* reemplaza margin-right en la img */
+  perspective: 600px;          /* profundidad 3D */
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--primary-blue);
+  letter-spacing: 2px;
+  cursor: pointer;             /* opcional, si querés interacción */
+}
+
+/* Imagen del logo: evita problemas con transparencias y permite rotación 3D */
+.logo__img {
+  width: 50px;                 /* ajusta si quieres otro tamaño */
+  height: 50px;
+  display: block;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  /* Usamos translateY para desplazar verticalmente en lugar de top,
+     así no "rompemos" la rotación que también usa transform */
+  transform: translateY(-5px) rotateY(0deg);
+  transition: transform 0.5s ease;
+  pointer-events: none;        /* evita "bugs" si el cursor pasa por zonas transparentes */
+  backface-visibility: hidden; /* evita parpadeos al rotar */
+  will-change: transform;
+}
+
+/* Hover: rotación lateral (derecha->izquierda) */
+.logo:hover .logo__img {
+  transform: translateY(-5px) rotateY(360deg);
+}
+
+/* Texto junto al logo (opcional para mantener tamaño/espaciado) */
+.logo__text {
+  line-height: 1;
+}

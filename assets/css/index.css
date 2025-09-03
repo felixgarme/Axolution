@@ -60,21 +60,7 @@ nav {
     padding: 0 2rem;
 }
 
-/* Logo: tamaño, color y espaciado */
-.logo {
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--primary-blue);
-    letter-spacing: 2px;
-}
 
-/* Ajustes de la imagen dentro del logo */
-.logo img {
-    vertical-align: middle;
-    margin-right: 10px;
-    position: relative;
-    top: -5px; /* Sube 5px */
-}
 
 /* Enlaces de navegación: lista horizontal */
 .nav-links {

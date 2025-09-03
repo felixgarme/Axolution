@@ -9,27 +9,13 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="/assets/css/index.css" rel="stylesheet">
+    <link href="/assets/css/nav.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="./assets/img/B icon low 2.png" alt="Icono" width="50" height="50">
-                AXOLUTION
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#tienda">Tienda 3D</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <button class="mobile-menu">☰</button>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
 
     <!-- Hero Section -->
@@ -206,7 +192,18 @@
         </div>
     </footer>
     <script src="assets/js/index.js"></script>
+    <script>
+        // Navbar
+        document.addEventListener("DOMContentLoaded", () => {
+        fetch("./views/components/navbar.html")
+            .then(res => res.text())
+            .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+            })
+            .catch(err => console.error("Error cargando navegación:", err));
+        });
 
+    </script>
 
 
 </body>
